@@ -70,7 +70,6 @@
             justify-content: space-between;
             align-items: center;
             gap: 10px;
-            flex-wrap: wrap;
         }
         
         .question-title span {
@@ -98,10 +97,10 @@
             background-color: var(--primary-color);
             color: white;
             border: none;
-            padding: 8px 12px;
-            border-radius: 5px;
+            padding: 4px 8px;
+            border-radius: 4px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 12px;
             transition: background 0.3s;
             white-space: nowrap;
         }
@@ -275,20 +274,25 @@
             }
             
             .question-title {
-                flex-direction: column;
-                align-items: flex-start;
+                flex-direction: row; /* 保持水平布局 */
+                align-items: center; /* 垂直居中 */
+                flex-wrap: wrap; /* 允许在需要时换行 */
+                gap: 8px; /* 减小间距 */
             }
             
             .question-title span {
-                margin-bottom: 10px;
-                min-width: unset;
+                flex: 1; /* 使问题文本占据可用空间 */
+                min-width: 0; /* 允许文本在需要时收缩 */
+                margin-bottom: 0; /* 移除底部边距 */
+                font-size: 14px; /* 稍微减小字体大小 */
             }
             
             .show-btn {
-                align-self: flex-end;
-                width: 100%;
-                text-align: center;
-                padding: 10px;
+                flex: 0 0 auto; /* 按钮不伸缩 */
+                width: auto; /* 自适应宽度 */
+                min-width: 60px; /* 确保最小点击区域 */
+                padding: 6px 8px; /* 调整内边距 */
+                font-size: 11px; /* 稍微减小字体 */
             }
             
             .nav-panel {
@@ -751,7 +755,7 @@
                     <button class="show-btn">显示答案</button>
                 </div>
                 <div class="answer">
-                    <p>订货点法是一种传统库存管理方法，当库存量降至预定阈值（订货点）时触发补货，适用于独立需求物料的静态管理，但无法动态适应生产变化，后被MRP取代。</p>
+                    <p>订货点法是一种传统库存管理方法，当库存量降至预定阈值时触发补货，适用于独立需求物料的静态管理，但无法动态适应生产变化，后被MRP取代。</p>
                 </div>
             </div>
             
